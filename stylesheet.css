@@ -1,0 +1,112 @@
+ 
+ .header h1 {
+     font-size: 5rem;
+ }
+ .header {
+    gap: 2rem;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-align: right;
+     margin: 10px;
+     font-family: Arial, Helvetica, sans-serif;
+     color: white;
+     background-color: rgb(87, 158, 87);
+     padding: 10px;
+     border-radius: 30px;
+ }
+
+img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.container {
+    align-items: center;
+    width: 100%;
+   
+}
+
+ body {
+     background-color: #daf9e0;
+     margin: 0;
+     font-family: Arial, Helvetica, sans-serif;
+ }
+
+ .navbar {
+     background-color: rgb(87, 158, 87);
+     padding: 15px 0;
+ }
+
+ .navbar ul {
+     list-style: none;
+     display: flex;
+     justify-content: center;
+     margin: 0;
+     padding: 0;
+ }
+
+ .navbar li {
+     margin: 0 30px;
+ }
+
+ .navbar a {
+     text-decoration: none;
+     color: white;
+     font-size: 22px;
+     font-weight: bold;
+     transition: 0.3s;
+ }
+ .navbar a:hover {
+     color: #333;
+     background-color: white;
+     padding: 8px 15px;
+     border-radius: 20px;
+ }
+
+.rectangle{
+  display: flex;              
+  flex-wrap: wrap;            
+  justify-content: center;    
+  gap: 20px;                  
+  padding: 20px;
+}
+
+.carte {
+  background-color: white;
+  width: 75rem;               
+  min-height: 20rem;          
+  border-radius: 20px;        
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+  padding: 20px;
+  transition: transform 0.3s;
+}
+
+.carte h2 {
+  color: rgb(87, 158, 87);
+  margin-bottom: 10px;
+}
+
+.carte h3 {
+  color: rgb(87, 158, 87);
+  margin-bottom: 10px;
+}
+
+.carte h4 {
+  color: rgb(87, 158, 87);
+  margin-bottom: 10px;
+}
+
+.carte h5 {
+  color: rgb(87, 158, 87);
+  margin-bottom: 10px;
+}
+
+
+
+.carte p, .carte li {
+  font-size: 18px;
+  color: #333;
+}
