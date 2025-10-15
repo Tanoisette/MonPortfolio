@@ -104,9 +104,30 @@ img {
   margin-bottom: 10px;
 }
 
-
+html {
+  scroll-behavior: smooth;
+}
 
 .carte p, .carte li {
   font-size: 18px;
   color: #333;
+}
+
+.passions {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  text-align: center;
+}
+
+.passions li {
+  background-color: rgb(11, 127, 11);
+  color: white;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 10px;
+  transition: background 0.3s, transform 0.3s;
 }
