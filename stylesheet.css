@@ -16,6 +16,7 @@
      border-radius: 30px;
  }
 
+
 img {
   width: 200px;
   height: 200px;
@@ -88,22 +89,10 @@ img {
   color: rgb(87, 158, 87);
   margin-bottom: 10px;
 }
-
-.carte h3 {
-  color: rgb(87, 158, 87);
-  margin-bottom: 10px;
+.carte:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
-
-.carte h4 {
-  color: rgb(87, 158, 87);
-  margin-bottom: 10px;
-}
-
-.carte h5 {
-  color: rgb(87, 158, 87);
-  margin-bottom: 10px;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -131,3 +120,17 @@ html {
   border-radius: 10px;
   transition: background 0.3s, transform 0.3s;
 }
+
+
+
+.formation-item h2 {
+  color: rgb(87, 158, 87);
+  margin-bottom: 10px;
+}
+
+.formation-item p, .formation-item li {
+  font-size: 16px;
+  color: #333;
+}
+
+
