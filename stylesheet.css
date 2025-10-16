@@ -1,86 +1,104 @@
- 
- .header h1 {
-     font-size: 5rem;
- }
- .header {
-    gap: 2rem;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     text-align: right;
-     margin: 10px;
-     font-family: Arial, Helvetica, sans-serif;
-     color: white;
-     background-color: rgb(87, 158, 87);
-     padding: 10px;
-     border-radius: 30px;
- }
 
+body {
+  background-color: #daf9e0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-img {
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  align-items: center;
+  width: 100%;
+}
+
+/* header */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: right;
+  gap: 2rem;
+  margin: 10px;
+  padding: 10px;
+  color: white;
+  background-color: rgb(87, 158, 87);
+  border-radius: 30px; /* note pour moi  coins arrondis */
+  font-family: Arial, Helvetica, sans-serif;
+  flex-wrap: wrap; /* note epour moi / permet l’adaptation sur petits écrans */
+}
+
+.header img {
   width: 200px;
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
+  border: 4px solid white;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.container {
-    align-items: center;
-    width: 100%;
-   
+.header img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
- body {
-     background-color: #daf9e0;
-     margin: 0;
-     font-family: Arial, Helvetica, sans-serif;
- }
+.header h1 {
+  font-size: 5rem;
+  margin: 0;
+  transition: font-size 0.3s;
+}
 
- .navbar {
-     background-color: rgb(87, 158, 87);
-     padding: 15px 0;
- }
+/* bar */
+.navbar {
+  background-color: rgb(87, 158, 87);
+  padding: 15px 0;
+}
 
- .navbar ul {
-     list-style: none;
-     display: flex;
-     justify-content: center;
-     margin: 0;
-     padding: 0;
- }
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
 
- .navbar li {
-     margin: 0 30px;
- }
+.navbar li {
+  margin: 0 30px;
+}
 
- .navbar a {
-     text-decoration: none;
-     color: white;
-     font-size: 22px;
-     font-weight: bold;
-     transition: 0.3s;
- }
- .navbar a:hover {
-     color: #333;
-     background-color: white;
-     padding: 8px 15px;
-     border-radius: 20px;
- }
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  transition: 0.3s;
+}
 
-.rectangle{
-  display: flex;              
-  flex-wrap: wrap;            
-  justify-content: center;    
-  gap: 20px;                  
+.navbar a:hover {
+  color: #333;
+  background-color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+}
+/* carte */
+.rectangle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
   padding: 20px;
+  overflow: hidden;
 }
 
 .carte {
   background-color: white;
-  width: 75rem;               
-  min-height: 20rem;          
-  border-radius: 20px;        
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+  width: 90%;
+  max-width: 75rem; /* limite max mais flexible */
+  min-height: 20rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   padding: 20px;
   transition: transform 0.3s;
 }
@@ -89,19 +107,43 @@ img {
   color: rgb(87, 158, 87);
   margin-bottom: 10px;
 }
-.carte:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-html {
-  scroll-behavior: smooth;
-}
 
-.carte p, .carte li {
+
+.carte p,.carte li {
   font-size: 18px;
   color: #333;
 }
 
+/* Cartes responsive(media queries) */
+@media (max-width: 992px) {
+  .carte {
+    width: 90%;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .rectangle {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carte {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .carte h2 {
+    font-size: 1.5rem;
+  }
+
+  .carte p,
+  .carte li {
+    font-size: 1rem;
+  }
+}
+
+/* passion */
 .passions {
   list-style: none;
   padding: 0;
@@ -121,16 +163,151 @@ html {
   transition: background 0.3s, transform 0.3s;
 }
 
+/* formation */
+
+/* Conteneur principal */
+.formation-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap;
+}
 
 
-.formation-item h2 {
+
+/* Titre principal */
+#formation h2 {
+  font-size: 2.5rem;
+  color: rgb(56, 110, 56);
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+}
+
+#formation h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: rgb(87, 158, 87);
+  border-radius: 2px;
+}
+
+
+/* Logo de l’établissement */
+.formation-item img {
+  width: 100px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+
+
+/* Titres et texte */
+
+.formation-item {
+  flex: 1 1 45%;
+  max-width: 500px;
+}
+
+.formation-item h6 {
+  font-size: 1.2rem;
   color: rgb(87, 158, 87);
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.formation-item p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.formation-item ul {
+  margin-top: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.formation-item li::before {
+  content: "✔️ ";
+  color: rgb(87, 158, 87);
+}
+
+.formation-item li {
+  font-size: 1rem;
+  margin-bottom: 6px;
+  transition: transform 0.3s;
+}
+
+
+@media (max-width: 768px) {
+  .formation-item {
+    width: 95%;
+    padding: 20px;
+  }
+
+  #formation h2 {
+    font-size: 2rem;
+  }
+
+  .formation-item h6 {
+    font-size: 1.1rem;
+  }
+}
+
+/* contact */
+footer {
+  background: linear-gradient(135deg, rgb(87, 158, 87), rgb(56, 110, 56));
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  margin-top: 40px;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cartecontact h2 {
+  font-size: 2rem;
   margin-bottom: 10px;
 }
 
-.formation-item p, .formation-item li {
-  font-size: 16px;
-  color: #333;
+.cartecontact p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #e8f5e9;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-links a {
+  background-color: white;
+  color: rgb(87, 158, 87);
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, background 0.3s, color 0.3s;
+}
+
+.contact-links a:hover {
+  transform: scale(1.1);
+  background-color: rgb(56, 110, 56);
+  color: white;
 }
 
 
