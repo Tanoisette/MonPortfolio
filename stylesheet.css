@@ -1,4 +1,6 @@
 
+
+
 body {
   background-color: #daf9e0;
   margin: 0;
@@ -12,6 +14,11 @@ html {
 .container {
   align-items: center;
   width: 100%;
+}
+
+#image {
+  max-width: 100%;
+  height: auto;
 }
 
 /* header */
