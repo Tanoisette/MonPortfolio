@@ -37,6 +37,7 @@ html {
   flex-wrap: wrap; /* note epour moi / permet l’adaptation sur petits écrans */
 }
 
+ 
 .header img {
   width: 200px;
   height: 200px;
@@ -46,18 +47,33 @@ html {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.header img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
 .header h1 {
   font-size: 5rem;
   margin: 0;
   transition: font-size 0.3s;
 }
 
+.header img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+
+
 /* bar */
+
+
 .navbar {
   background-color: rgb(87, 158, 87);
   padding: 15px 0;
@@ -89,25 +105,57 @@ html {
   padding: 8px 15px;
   border-radius: 20px;
 }
+
+@media (max-width: 600px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar li {
+    margin: 10px 0;
+  }
+}
+
 /* carte */
 .rectangle {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  flex-direction: column; /*  note moi :aligne les cartes verticalement sur mobile */
+  align-items: center;
+  margin:0 auto;
+  gap: 30px;
   padding: 20px;
-  overflow: hidden;
+  max-width: 1200px; /* note moi limite max */
+  margin: 0 auto;
 }
+#projets .rectangle {
+  display: flex;
+  flex-direction: row; /* note a moi aligne les cartes horizontalement */
+  justify-content: center;
+  flex-wrap: wrap; /* pour passer à la ligne sur petits écrans */
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  #projets .rectangle {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+
 
 .carte {
   background-color: white;
-  width: 90%;
-  max-width: 75rem; /* limite max mais flexible */
-  min-height: 20rem;
+  width: 100%;
+  max-width: 1000px; /* largeur fixe max sur desktop */
+  min-height: auto;
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   padding: 20px;
+  margin: 0 0;
   transition: transform 0.3s;
+  box-sizing: border-box;
 }
 
 .carte h2 {
@@ -121,33 +169,10 @@ html {
   color: #333;
 }
 
-/* Cartes responsive(media queries) */
-@media (max-width: 992px) {
-  .carte {
-    flex-direction: column;
-    width: 90%;
-    min-height: auto;
-  }
-}
-
-@media (max-width: 600px) {
-  .rectangle {
-    flex-direction: column;
-    align-items: center;
-  }
-
+@media (max-width: 768px) {
   .carte {
     width: 95%;
     padding: 15px;
-  }
-
-  .carte h2 {
-    font-size: 1.5rem;
-  }
-
-  .carte p,
-  .carte li {
-    font-size: 1rem;
   }
 }
 
